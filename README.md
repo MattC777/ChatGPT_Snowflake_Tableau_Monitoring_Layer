@@ -61,7 +61,7 @@ Verified access to views:
 - Worksheet 8: Rooted from the table:`TOPICS_SUMMARY`. It reflects distribution of different topic names in today's scraping.
 - ![sheet8](worksheet8.png)
 
-- Worksheet 8: Rooted from the table:`TOPICS_SUMMARY`. It is a scatter plot regarding average thumb-up count and daily shared percentage of topics. I disaggregate the data so everything is showing in the greatest levle of detail. The dates are implied by color and the topic names are implied by different shapes. 
+- Worksheet 9: Rooted from the table:`TOPICS_SUMMARY`. It is a scatter plot regarding average thumb-up count and daily shared percentage of topics. I disaggregate the data so everything is showing in the greatest levle of detail. The dates are implied by color and the topic names are implied by different shapes. 
 - ![sheet9](worksheet9.png)
 
 - Dashboard: Monitoring Layer
