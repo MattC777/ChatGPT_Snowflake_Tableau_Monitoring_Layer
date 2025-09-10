@@ -31,13 +31,19 @@ Verified access to views:
 - In Tableau **Logical Layer**, dragged in multiple Snowflake tables to create a unified data source.
 - Base tables: `REVIEWS_CLEAN`, `TOPICS_EXAMPLES`, `TOPICS_KEYWORDS`, `TOPICS_SUMMARY`
 - Views: `V_LOW_SCORE_CLEAN`, `V_RECENT_7D`, `TOPICS_KEYWORDS_EXPLODED_V`
-- 
+- ![Data_Source](Data_Source_Overview.png)
 
 ---
 
-## 3. Extract Configuration
+## 3. Workbook Interpretation
+- There is a total of 9 worksheets in the final workbook. The monitoring dashboard is composed of 7 of them. It doesn't mean that the rest two sheets are less important. The main reason is that putting 9 worksheets in dashboard would make everything hard to read.
+- Worksheet 1: 
 
-Switched from **Live Connection** to **Extract** to reduce Snowflake credit usage.
+---
+
+## 4. Extract Configuration
+
+After I finished building the dashboard, I switched from **Live Connection** to **Extract** to reduce Snowflake credit usage.
 
 Extract settings:
 - **Data Storage**: Logical Tables  
@@ -50,7 +56,7 @@ This ensures dashboards load from an Extract (Hyper file) instead of continuousl
 
 ---
 
-## 4. Publishing to Tableau Cloud
+## 5. Publishing to Tableau Cloud
 
 Published the workbook to **Tableau Cloud**:
 
@@ -60,7 +66,7 @@ Published the workbook to **Tableau Cloud**:
 
 ---
 
-## 5. Refreshing Extract
+## 6. Refreshing Extract
 
 - Extract does **not auto-update** unless refreshed.  
 - Supervisor can manually trigger refresh from Tableau Cloud:  
@@ -70,7 +76,7 @@ Published the workbook to **Tableau Cloud**:
 
 ---
 
-## 6. Credit Consumption(only consume credits when mannually refresh extract)
+## 7. Credit Consumption(only consume credits when mannually refresh extract)
 
 - **Browsing dashboards** → No Snowflake credits consumed.  
 - **Refreshing Extract** (manual or scheduled) → Snowflake credits consumed.  
@@ -78,7 +84,7 @@ Published the workbook to **Tableau Cloud**:
 
 ---
 
-## 7. Key Notes
+## 8. Key Notes
 
 - Dashboards are **stable, cost-efficient, and supervisor-accessible**.  
 - Local `.twb` files are optional backups.  
@@ -86,7 +92,7 @@ Published the workbook to **Tableau Cloud**:
 
 ---
 
-## 8. Personal Reflection
+## 9. Personal Reflection
 
 ---
 
