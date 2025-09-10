@@ -37,7 +37,35 @@ Verified access to views:
 
 ## 3. Workbook Interpretation
 - There is a total of 9 worksheets in the final workbook. The monitoring dashboard is composed of 7 of them. It doesn't mean that the rest two sheets are less important. The main reason is that putting 9 worksheets in dashboard would make everything hard to read.
-- Worksheet 1: 
+- Worksheet 1: Rooted from the table:`REVIEWS_CLEAN`. It reflects the daily scraping amount. The default is 2000. If the number of new reviews is greater than 2000, the pipeline would scrape 2000 most recent reviews. If the number of new reviews is less than 2000, the pipeline would scrape that number of reviews. Because I was doing testing before August 15th, so I set a filter to make sure the data visualization starts from August 15th.
+- ![sheet1](worksheet1.png)
+
+- Worksheet 2: Rooted from the view:`V_LOW_SCORE_CLEAN`. It reflects the trend on number of low score(1-2) reviews that is being created everyday. If some day this trend goes wild, the product team may need to pay extra attention. 
+- ![sheet2](worksheet2.png)
+
+- Worksheet 3: Rooted from the view:`V_RECENT_7D`. It reflects the distribution of reviews based on their scores during the recent 7-days period. 
+- ![sheet3](worksheet3.png)
+
+- Worksheet 4: Rooted from the table:`TOPICS_SUMMARY`. It reflects the trend on number of pain-point topics that are generated everyday. 
+- ![sheet4](worksheet4.png)
+
+- Worksheet 5: Rooted from the view:`TOPICS_KEYWORDS_EXPLODED_V`. It reflects 30 most popular topic keywords(pain point) during the last 3 days. 
+- ![sheet5](worksheet5.png)
+
+- Worksheet 6: Rooted from the table:`TOPICS_EXAMPLES`. It reflects different topics and their corresponding average rep score. The average rep score indicates how related are the reviews and the problems, which are topic names in this case. 
+- ![sheet6](worksheet6.png)
+
+- Worksheet 7: Rooted from the table:`TOPICS_EXAMPLES`. It reflects distribution of different topic names and total thumb-up counts. I sort them in descending order.
+- ![sheet7](worksheet7.png)
+
+- Worksheet 8: Rooted from the table:`TOPICS_SUMMARY`. It reflects distribution of different topic names in today's scraping.
+- ![sheet8](worksheet8.png)
+
+- Worksheet 8: Rooted from the table:`TOPICS_SUMMARY`. It is a scatter plot regarding average thumb-up count and daily shared percentage of topics. I disaggregate the data so everything is showing in the greatest levle of detail. The dates are implied by color and the topic names are implied by different shapes. 
+- ![sheet9](worksheet9.png)
+
+- Dashboard: Monitoring Layer
+- ![dashboard](dashboard.png)
 
 ---
 
@@ -66,7 +94,7 @@ Published the workbook to **Tableau Cloud**:
 
 ---
 
-## 6. Refreshing Extract
+## 6. Refreshing Extract(whenever we need to see the live update, we can mannually refresh on Tableau Online/Cloud)
 
 - Extract does **not auto-update** unless refreshed.  
 - Supervisor can manually trigger refresh from Tableau Cloud:  
@@ -79,15 +107,14 @@ Published the workbook to **Tableau Cloud**:
 ## 7. Credit Consumption(only consume credits when mannually refresh extract)
 
 - **Browsing dashboards** → No Snowflake credits consumed.  
-- **Refreshing Extract** (manual or scheduled) → Snowflake credits consumed.  
+- **Refreshing Extract** (manual or scheduled) → Snowflake credits consumed.  (we could to this, but in order to save credit, I choose **mannual**)
 - Current setup: **manual full refresh** for stability.  
 
 ---
 
 ## 8. Key Notes
-
-- Dashboards are **stable, cost-efficient, and supervisor-accessible**.  
-- Local `.twb` files are optional backups.  
+ 
+- Local `.twb` files are optional backups. (I saved on my desktop) 
 - The **authoritative version** is maintained in **Tableau Cloud**.
 
 ---
