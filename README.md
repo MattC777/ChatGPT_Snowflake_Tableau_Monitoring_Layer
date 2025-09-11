@@ -120,6 +120,23 @@ Published the workbook to **Tableau Cloud**:
 ---
 
 ## 9. Personal Reflection
+When I first started connecting Tableau to Snowflake, I quickly realized that the biggest challenges were not in visualization, but in setup, configuration, and cost management. The process taught me a lot about efficiency, problem solving, and making trade-offs in real-world analytics projects.
+
+At the beginning, I encountered licensing barriers. Tableau only allows connections to Snowflake through Tableau Desktop, which is the paid version. I learned that even with Tableau Public, connecting directly to Snowflake was not supported. To access Tableau Desktop, I initially relied on a school email for a free trial 3 weeks ago, but after a few weeks that expired. The official license costs around $900 per year, which was not practical for me at this stage. To continue, I borrowed my girlfriend’s school email to start a new free trial, which is why the current Tableau account is under the name Jinwen Zhou.
+
+At the same time, my Snowflake free trial also expired, which meant I had to bind my own credit card to keep the project running. This changed my mindset. Previously, I didn’t pay much attention to query cost because the free trial credits felt unlimited. But once real charges were on my credit card, I became very conscious about credit consumption. For example, I deliberately chose manual refresh of extracts instead of scheduling daily refreshes. This way, I could minimize unnecessary costs and only refresh when needed.
+
+Initially, I built all dashboards on a live connection, but then I checked the Snowflake usage reports and realized credits were being consumed very quickly. After some investigation, I decided to switch to Extracts. I chose full extracts rather than incremental extracts, for two reasons:
+
+- My dataset is relatively small, so full extracts are manageable and do not consume too much. They also give me a complete snapshot each time.
+
+- My data source is a combination of multiple tables and views. Some of these do not share a common field, and Tableau only allows selecting one field for incremental refresh for one data source. That limitation made incremental refresh impractical for my setup.
+
+Another lesson I learned was about designing supporting views in Snowflake. For example, I wanted to build a word cloud in Tableau, but found that the raw tables were not structured appropriately for that type of visualization. Tableau has limited text-splitting functions, so I created a new view in Snowflake: TOPICS_KEYWORDS_EXPLODED_V. This pre-processed the keywords into a structure that Tableau could easily consume, making visualization straightforward.
+
+Overall, the most challenging part of this project was not the visualization itself. I had already passed the Tableau certification and was familiar with the tables and views, so building charts was not difficult. The real challenge was connecting Tableau with Snowflake, configuring it correctly, and optimizing costs. Through this project, I learned that in a professional setting, success is not only about “making it work,” but also about making it efficient. In a real company environment, I cannot treat compute resources as unlimited simply because it’s not my personal account.
+
+In summary, this project strengthened my Tableau visualization skills, gave me my first experience creating a truly dynamic dashboard powered by a live pipeline, and taught me the importance of efficiency and cost-awareness in analytics engineering. The experience has reshaped how I think about data projects—not just as something to deliver, but something to deliver effectively and responsibly.
 
 ---
 
