@@ -90,15 +90,14 @@ Published the workbook to **Tableau Cloud**:
 
 - **Project**: Default  
 - **Workbook Name**: `Chatgpt_Reviews_Pain_Point_Analysis`  
-- **Data Source**: Embedded in workbook  
-
+- **Data Source**: Embedded in workbook
+- ![workbook](workbook_Overview.png)
 ---
 
 ## 6. Refreshing Extract(whenever we need to see the live update, we can mannually refresh on Tableau Online/Cloud)
 
 - Extract does **not auto-update** unless refreshed.  
-- Supervisor can manually trigger refresh from Tableau Cloud:  
-  `... → Refresh Data Extract`  
+- We can manually trigger refresh from Tableau Cloud. 
 - Filters like **“Today”** or **“Last 7 Days”** calculate based on Extract content.  
   → Extract refresh is required for updated results.
 
@@ -107,7 +106,7 @@ Published the workbook to **Tableau Cloud**:
 ## 7. Credit Consumption(only consume credits when mannually refresh extract)
 
 - **Browsing dashboards** → No Snowflake credits consumed.  
-- **Refreshing Extract** (manual or scheduled) → Snowflake credits consumed.  (we could to this, but in order to save credit, I choose **mannual**)
+- **Refreshing Extract** (manual or scheduled) → Snowflake credits consumed.  (we could to this in scheduled, but in order to save credit, I choose **mannual**)
 - Current setup: **manual full refresh** for stability.  
 
 ---
